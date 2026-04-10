@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f2;
+  --foreground: #18233d;
+  --surface: #ffffff;
+  --surface-soft: #f4f7ff;
+  --primary: #2b5fb3;
+  --primary-strong: #214989;
+  --accent: #d59b58;
+  --muted: #66789c;
+  --border: #dbe3ee;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-space-grotesk);
+}
+
+body {
+  background:
+    radial-gradient(1200px 540px at 8% -8%, rgba(202, 221, 255, 0.66) 0%, rgba(202, 221, 255, 0) 68%),
+    radial-gradient(900px 420px at 96% 0%, rgba(255, 235, 213, 0.78) 0%, rgba(255, 235, 213, 0) 70%),
+    linear-gradient(180deg, #fbfbf7 0%, #f6f7f4 45%, #f2f5f9 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #fbfbf7;
+}
+
+*:focus-visible {
+  outline: 2px solid #1f3b78;
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-space-grotesk), var(--font-sans), "Segoe UI", sans-serif;
+}
+
+.app-gradient-bg {
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(202, 221, 255, 0.78) 0%, rgba(202, 221, 255, 0) 70%),
+    radial-gradient(900px 500px at 96% 0%, rgba(255, 233, 210, 0.92) 0%, rgba(255, 233, 210, 0) 72%),
+    linear-gradient(180deg, #fbfbf7 0%, #f6f8fb 48%, #f1f5fb 100%);
+}
+
+.glass-panel {
+  border: 1px solid rgba(219, 227, 238, 0.92);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 28px 70px rgba(41, 59, 96, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.surface-panel {
+  border: 1px solid rgba(219, 227, 238, 0.94);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 40px rgba(39, 58, 94, 0.07);
+}
+
+.surface-inset {
+  border: 1px solid rgba(219, 227, 238, 0.78);
+  background: linear-gradient(180deg, rgba(246, 249, 255, 0.86) 0%, rgba(255, 255, 255, 0.94) 100%);
+}
+
+.soft-divider {
+  border-color: rgba(219, 227, 238, 0.9);
+}
+
+.soft-scrollbar {
+  scrollbar-color: #bdc7e3 transparent;
+  scrollbar-width: thin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float-gentle {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .motion-fade-up {
+    animation: fade-up 420ms ease-out both;
+  }
+
+  .motion-fade-in {
+    animation: fade-in 280ms ease-out both;
+  }
+
+  .motion-float {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  .motion-delay-1 {
+    animation-delay: 70ms;
+  }
+
+  .motion-delay-2 {
+    animation-delay: 140ms;
+  }
+
+  .motion-delay-3 {
+    animation-delay: 210ms;
+  }
+}
