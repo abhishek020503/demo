@@ -8,7 +8,6 @@ const DOCTOR_NAV_ITEMS = [
   { href: "/doctor-smart-watch-data", label: "Smart Watch" },
   { href: "/doctor-prakriti-dosha", label: "Prakrati" },
   { href: "/doctor-blood-ayurveda", label: "Body Analysis" },
-  { href: "/doctor-imaging-report", label: "Imaging" },
   { href: "/doctor-risk-scoring", label: "Risk" },
   { href: "/treatment-plan", label: "Plan" },
 ] as const;

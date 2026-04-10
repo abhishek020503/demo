@@ -7,15 +7,13 @@ import { DOCTOR_PROFILE_DETAILS } from "./doctor-dashboard/data";
 import DoctorChatbotWidget from "./DoctorChatbotWidget";
 
 const NAV_ITEMS = [
-  { href: "/doctor-dashboard", label: "Dashboard", keywords: "doctor dashboard overview patient summary modules" },
-  { href: "/doctor-biohack-data", label: "Bio Hack Data", keywords: "bio hack device body composition metabolic age bmi body fat" },
-  { href: "/doctor-smart-watch-data", label: "Smart Watch Data", keywords: "smart watch wearable sleep hrv spo2 steps blood pressure" },
+  { href: "/doctor-dashboard", label: "Overview", keywords: "doctor dashboard overview patient summary modules" },
+  { href: "/doctor-biohack-data", label: "Bio Hack", keywords: "bio hack device body composition metabolic age bmi body fat" },
+  { href: "/doctor-smart-watch-data", label: "Smart Watch", keywords: "smart watch wearable sleep hrv spo2 steps blood pressure" },
   { href: "/doctor-prakriti-dosha", label: "Prakrati", keywords: "prakrati dosha ayurveda integrative dashboard" },
   { href: "/doctor-blood-ayurveda", label: "Body Analysis", keywords: "blood report body analysis lab values ayurveda" },
-  { href: "/doctor-imaging-report", label: "Imaging Report", keywords: "ecg usg xray mri ct dexa pet" },
-  { href: "/doctor-risk-scoring", label: "Risk Scoring", keywords: "risk scoring fatty liver cardiovascular anaemia gout hypertension diabetes" },
-  { href: "/treatment-plan", label: "Treatment Plan", keywords: "diet lifestyle herbs detox yoga doctor treatment" },
-  { href: "/follow-up", label: "Follow Up", keywords: "doctor follow up next visit compliance health score" },
+  { href: "/doctor-risk-scoring", label: "Risk", keywords: "risk scoring fatty liver cardiovascular anaemia gout hypertension diabetes" },
+  { href: "/treatment-plan", label: "Plan", keywords: "diet lifestyle herbs detox yoga doctor treatment" },
 ] as const;
 
 const DOCTOR_PATHS = new Set([
@@ -24,10 +22,8 @@ const DOCTOR_PATHS = new Set([
   "/doctor-smart-watch-data",
   "/doctor-prakriti-dosha",
   "/doctor-blood-ayurveda",
-  "/doctor-imaging-report",
   "/doctor-risk-scoring",
   "/treatment-plan",
-  "/follow-up",
 ]);
 
 function getDashboardProfile(pathname: string) {
