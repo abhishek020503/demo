@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -432,13 +431,10 @@ export default function DoctorDashboard() {
                     ))}
                   </div>
                   <div className="mt-3 flex justify-end">
-                    <Link
-                      href="/doctor-prakriti-dosha"
-                      className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-700 transition hover:bg-slate-50"
-                    >
-                      Open full prakrati page
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-700">
+                      Full prakrati summary included here
                       <ArrowUpRight className="h-3.5 w-3.5" />
-                    </Link>
+                    </span>
                   </div>
                 </OverviewSection>
 

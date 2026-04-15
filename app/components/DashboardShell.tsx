@@ -1,35 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Bell, ChevronDown, Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { DOCTOR_PROFILE_DETAILS } from "./doctor-dashboard/data";
 import DoctorChatbotWidget from "./DoctorChatbotWidget";
 
 const NAV_ITEMS = [
-  { href: "/doctor-dashboard", label: "Overview", keywords: "doctor dashboard overview patient summary modules" },
-  { href: "/doctor-biohack-data", label: "Bio Hack", keywords: "bio hack device body composition metabolic age bmi body fat" },
-  { href: "/doctor-smart-watch-data", label: "Smart Watch", keywords: "smart watch wearable sleep hrv spo2 steps blood pressure" },
-  { href: "/doctor-prakriti-dosha", label: "Prakrati", keywords: "prakrati dosha ayurveda integrative dashboard" },
-  { href: "/doctor-blood-ayurveda", label: "Body Analysis", keywords: "blood report body analysis lab values ayurveda" },
-  { href: "/doctor-risk-scoring", label: "Risk", keywords: "risk scoring fatty liver cardiovascular anaemia gout hypertension diabetes" },
-  { href: "/treatment-plan", label: "Plan", keywords: "diet lifestyle herbs detox yoga doctor treatment" },
+  { href: "/doctor-dashboard", label: "Overview" },
 ] as const;
 
-const DOCTOR_PATHS = new Set([
-  "/doctor-dashboard",
-  "/doctor-biohack-data",
-  "/doctor-smart-watch-data",
-  "/doctor-prakriti-dosha",
-  "/doctor-blood-ayurveda",
-  "/doctor-risk-scoring",
-  "/treatment-plan",
-]);
-
-function getDashboardProfile(pathname: string) {
-  if (pathname.startsWith("/doctor") || pathname === "/treatment-plan" || pathname === "/follow-up") {
-    return { name: "Arjun Kapoor", email: "arjun.kapoor@mail.com", role: "Patient" };
-  }
+function getDashboardProfile() {
   return { name: "Arjun Kapoor", email: "arjun.kapoor@mail.com", role: "Patient" };
 }
 
@@ -51,14 +32,9 @@ export default function DashboardShell({
 }) {
   const router = useRouter();
   const pathname = usePathname();
-  const profile = getDashboardProfile(pathname);
+  const profile = getDashboardProfile();
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-
-  const scopedItems = useMemo(
-    () => NAV_ITEMS.filter((item) => DOCTOR_PATHS.has(item.href) || item.href.startsWith("/doctor")),
-    []
-  );
 
   const navigateTo = (href: string) => {
     setMobileSidebarOpen(false);
@@ -102,7 +78,7 @@ export default function DashboardShell({
         </div>
 
         <div className="surface-panel space-y-1 rounded-[1.4rem] p-2.5">
-          {scopedItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <button
               key={item.href}
               type="button"

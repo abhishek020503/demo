@@ -4,12 +4,6 @@ import { usePathname, useRouter } from "next/navigation";
 
 const DOCTOR_NAV_ITEMS = [
   { href: "/doctor-dashboard", label: "Overview" },
-  { href: "/doctor-biohack-data", label: "Bio Hack" },
-  { href: "/doctor-smart-watch-data", label: "Smart Watch" },
-  { href: "/doctor-prakriti-dosha", label: "Prakrati" },
-  { href: "/doctor-blood-ayurveda", label: "Body Analysis" },
-  { href: "/doctor-risk-scoring", label: "Risk" },
-  { href: "/treatment-plan", label: "Plan" },
 ] as const;
 
 export default function DoctorNavbar() {
